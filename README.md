@@ -2,6 +2,17 @@
 
 Simple identity reconciliation service for linking customer contacts based on shared email or phone number.
 
+## 🌐 Live Demo
+
+**API Base URL:** https://bitespeed-identity-service-i9oa.onrender.com
+
+**Quick Test:**
+```bash
+curl -X POST https://bitespeed-identity-service-i9oa.onrender.com/identify \
+  -H "Content-Type: application/json" \
+  -d '{"email": "test@example.com", "phoneNumber": "123456"}'
+```
+
 ## Quick Start
 
 ```bash
@@ -61,7 +72,13 @@ Health check endpoint.
 ### Scenario 1: Create New Primary Contact
 
 ```bash
+# Local
 curl -X POST http://localhost:3000/identify \
+  -H "Content-Type: application/json" \
+  -d '{"email": "lorraine@hillvalley.edu", "phoneNumber": "123456"}'
+
+# Live Demo
+curl -X POST https://bitespeed-identity-service-i9oa.onrender.com/identify \
   -H "Content-Type: application/json" \
   -d '{"email": "lorraine@hillvalley.edu", "phoneNumber": "123456"}'
 ```
@@ -285,7 +302,12 @@ CREATE TABLE "contacts" (
 
 ### Health Check
 ```bash
+# Local
 curl http://localhost:3000/health
+
+# Live Demo
+curl https://bitespeed-identity-service-i9oa.onrender.com/health
+
 # Expected: {"status":"OK"}
 ```
 
