@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Identity reconciliation service",
   "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node app.js",
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "build": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.7.0",
